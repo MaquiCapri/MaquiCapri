@@ -1,0 +1,65 @@
+
+ <mat-toolbar color="accent" >
+    <span>Listado de proyectos</span>
+  </mat-toolbar>
+  <br>
+   <button mat-raised-button color="warn" (click)="irCrear()">Crear proyectos</button> 
+  <!-- <button class="btn btn-success mt-2" (click)="irCrear()">Crear proyectos</button> -->
+  <br>
+  <mat-form-field>
+    <mat-label>Filtro</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="escribir proyecto" #input autocomplete="off">
+  </mat-form-field>
+
+   <div class="mat-elevation-z8"> 
+
+    <table mat-table [dataSource]="dataSource" matSort > 
+
+      <!-- Name Column -->
+       <ng-container matColumnDef="titulo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Proyecto </th>
+        <td mat-cell *matCellDef="let proyectos"> {{proyectos.titulo}} </td>
+      </ng-container> 
+      
+          <!-- Precio -->
+           <ng-container matColumnDef="direccionUrl">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>DireccionUrl</th>
+            <td mat-cell *matCellDef="let proyectos" style="width: 2rem;font-size: 10px;"> {{proyectos.direccionUrl}} </td>
+          </ng-container>
+          
+      <!-- Weight Column -->
+       <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripcion</th>
+       <td mat-cell *matCellDef="let proyectos" >{{proyectos.descripcion}}</td> 
+      </ng-container> 
+
+      <!-- <ng-container matColumnDef="imagen">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Imagen</th>
+       <td mat-cell *matCellDef="let listaProd">
+      <button mat-icon-button color="primary" (click)="showImages(listaProd)">
+        <i class="bi bi-images"></i>
+      </button>
+    </td> 
+      </ng-container> -->
+      
+       <ng-container matColumnDef="editar">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Editar</th>
+        <td mat-cell *matCellDef="let proyectos"><button class="btn btn-outline-dark" (click)="editProyectDetails(proyectos.id)" >
+          <i class="bi bi-pencil-fill"></i></button> </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="eliminar">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Eliminar</th>
+        <td mat-cell *matCellDef="let proyectos"><button class="btn btn-outline-danger" (click)="eliminarProducto(proyectos.id)">
+          <i class="bi bi-trash3-fill"></i></button> </td>
+        </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" id="marca"></tr>
+    
+    </table> 
+     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> 
+    
+    </div> 
+ 
+   

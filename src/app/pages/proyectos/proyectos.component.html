@@ -1,0 +1,23 @@
+
+<div class="proyects" style="background-image: url('./assets/fondoPort1.jpg')">
+        <div class="box">
+          <h2>Proyectos:</h2>
+          <div class="card mb-3" style="max-width: 540px;" style="text-align: center;"  *ngFor="let p of proyectos" >
+            <div class="row g-0">
+              <div class="col-md-4" id="fotoPort" style="margin-top: 30px;">
+                <img [src]="p.proyectoImages[0].url" style="width:10rem ; height: 50px;" class="img-fluid rounded-start" alt="logoArgPro">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h2>{{p.titulo}}</h2>
+               <button type="button" class="button" (click)="irDetalles()"><span>+info</span></button> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <button mat-stroked-button class="primary" type="text" (click)="irInicio()">Volver</button>
+
+        </div>
+  
+</div>
+           

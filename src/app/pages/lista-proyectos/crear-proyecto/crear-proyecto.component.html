@@ -1,0 +1,90 @@
+<div style="background-image: url('./assets/fondoPort1.jpg')">
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <div class="card p-2">
+            <div class="row">
+                <div class="col-6">
+                    <!-- productForm -->
+                    <form #productForm="ngForm" (ngSubmit)="addProduct(productForm)">
+                        <!-- ngModel #nombre="ngModel" #_nombre -->
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Titulo</mat-label>
+                            <input matInput placeholder="Titulo" [(ngModel)]="proyectos.titulo" name="titulo" ngModel
+                                #titulo="ngModel" #_titulo required minlength="3" maxlength="40">
+
+                            <div class="validacion" *ngIf="titulo.invalid && titulo.touched">
+                                Se requiere mínimo 3 caracteres.
+                            </div>
+                            
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Descripción</mat-label>
+                            <textarea matInput placeholder="Descripción" [(ngModel)]="proyectos.descripcion"
+                                name="descripcion" ngModel #descripcion="ngModel" #_descripcion style="height: 150px;"
+                                required minlength="3" maxlength="250"> </textarea>
+                            <div class="validacion" *ngIf="descripcion.invalid && descripcion.touched">
+                                Se requiere mínimo 3 caracteres.
+                            </div>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>DireccionUrl</mat-label>
+                            <input matInput placeholder="DireccionUrl" [(ngModel)]="proyectos.direccionUrl"
+                                name="direccionUrl" ngModel #direccionUrl="ngModel" #_direccionUrl minlength="3"
+                                maxlength="100">
+                            <div class="validacion" *ngIf="direccionUrl.invalid && direccionUrl.touched">
+                                Se requiere mínimo 3 caracter.
+                            </div>
+                        </mat-form-field>
+
+                        <br>
+                        <div align="end">
+                            <button mat-stroked-button class="primary" (click)="volverLista()">Volver lista</button>
+                            <button mat-stroked-button class="primary" type="submit">Guardar</button>
+                        </div>
+                        <!-- [disabled]="!productForm.form.valid" -->
+                    </form>
+
+                </div>
+                <div class="col-6">
+                    <!--  -->
+                    <!-- <div class="dropzone" appDrag 
+                 (files)="fileDropped($event)" >
+                    <div class="text">
+                        <div class="centered p-2">
+                            Arrastre y suelte su archivo o busque <br> un
+                            <a (click)="selectFile.click()" class="archivo">archivo</a>
+                        </div>
+                    </div>
+                </div>   -->
+                    <!-- imagen prueba1 -->
+                    <div>
+                        <input type="file" multiple value="select" #selectFile (change)="onFileSelected($event)"
+                            placeholder="Imagen">
+                    </div>
+                    <!--   style="display:none"-->
+                    <div class="mt-5">
+                        <div class="row">
+                            <mat-grid-list cols="1" rowHeight="1:1">
+                                <mat-grid-tile *ngFor="let file of proyectos.proyectoImages; let i = index">
+                                    <div style="position: relative">
+                                        <span class="btn-remove-image" (click)="removeImages(i)">x</span>
+                                        <img [src]="file.url" width="100px" height="100px">
+                                        <!-- 80% -->
+                                    </div>
+                                </mat-grid-tile>
+                            </mat-grid-list>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+</div>

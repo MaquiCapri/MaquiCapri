@@ -1,0 +1,90 @@
+.footer {
+    height: 28vh;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #redes {
+    display: inline-flex;
+    margin-left: 40px;
+    margin-top: 20px;
+  }
+  
+  #redes a {
+    text-decoration: none;
+    font-size: 36px;
+    cursor: pointer;
+  }
+  .row{
+    height: 50px;
+  }
+  
+  p {
+    color: #1d1d1d;
+    padding: 0px 10px;
+  }
+  
+  /* .logo img{
+    width: 9rem;
+    height: 3rem;
+  } */
+  
+  .logoGit {
+    color: #1d1d1d;
+   
+  }
+  
+  .logoGit:hover {
+    color: #464646;
+  }
+  
+  .logoLinkedin {
+    color: #1d1d1d;
+  }
+  
+  .logoLinkedin:hover {
+    color: #464646;
+  }
+  
+  .logoMail {
+    color: #1d1d1d;
+  }
+  
+  .logoMail:hover {
+    color: #464646;
+  }
+  
+  .logoWhat {
+    color: #1d1d1d;
+  }
+  
+  .logoWhat:hover {
+    color: #464646;
+  }
+  
+  .logoCopy {
+    color: #1d1d1d;
+  }
+
+  @media (max-width: 570px) {
+
+    #redes{
+          flex-wrap: wrap;
+          justify-content: center;
+      }
+      i{
+        font-size:31px ;
+                }
+    }
+
+    @media (max-width: 360px) {
+
+      #redes{
+        font-size: 10px;
+ 
+        }
+
+        i{
+font-size:29px ;
+        }
+      }

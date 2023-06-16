@@ -1,0 +1,49 @@
+<body class="body" style="background-image: url('./assets/fondoPort1.jpg')">
+
+<br><br>
+
+<div class="container col-12 col-md-8 col-lg-6 col-xl-5">
+
+  <div class="text-center">
+    <img src="assets/user.png" alt="" width="100" height="100">
+  </div>
+  <br>
+  <!-- <div class="card bg-dark text-white" style="border-radius: 1rem;"> -->
+  <div class="card-body p-1 text-center">
+
+    <div class="irLista" *ngIf="isLoggedAdmin">
+      <img src="assets/arrow-right.png" alt="" width="60" height="60" style="margin-top: -30px;margin-left: -80px;">
+
+      <button class="btn btn-success" (click)="irLista()" style="margin-left: 15px;">Lista de productos</button>
+    </div>
+    <br>
+    
+    <h2>Iniciar sesión</h2>
+    <form #f="ngForm" (ngSubmit)="onLogin()" novalidate >
+
+      <div class="form-group">
+        <mat-form-field class="form-outline form-white mb-4">
+          <input matInput type="email" id="nombreUsuario" name="nombreUsuario" class="form-control form-control-lg"
+            [(ngModel)]="nombreUsuario" name="nombreUsuario" required />
+          <mat-label class="form-label" for="nombreUsuario"  >Usuario</mat-label>
+
+        </mat-form-field>
+
+      </div>
+
+      <div class="form-group">
+        <mat-form-field class="form-outline form-white mb-4">
+          <input matInput type="password" id="password" class="form-control form-control-lg" [(ngModel)]="password"
+            name="password" required>
+          <mat-label class="form-label" for="password">Clave</mat-label>
+        </mat-form-field>
+      </div>
+
+      <button class="btn btn-success" type="submit" [disabled]="!f.form.valid" (click)="verificar()">Ingresar</button>
+
+    </form>
+  </div>
+
+</div>
+<br><br>
+</body>

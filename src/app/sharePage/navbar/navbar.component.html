@@ -1,0 +1,57 @@
+
+<div class="container-fluid" style="background-image: url('./assets/fondoPort1.jpg')">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+   
+      <div class="logo">
+        <img src="./assets/maquiLogo.png">
+      </div>
+  
+      <button class="navbar-toggler" type="button"  data-bs-toggle="collapse" aria-controls="navbarNav"
+        aria-label="Toggle navigation" data-bs-target="#navbarNav" aria-expanded="true">
+        <span class="navbar-toggler-icon" ><svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg></span>
+        <!-- <span id="oculta" (click)="ocultar()" style="width: 2rem;">x</span> -->
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNav" *ngIf="ocultar1">
+  
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " routerLink="" routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="proyectos" routerLinkActive="active">Proyectos</a>
+          </li>
+          <li class="nav-item">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="about" routerLinkActive="active">About Me</a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link " routerLinkActive="active" (click)="irLogin()" *ngIf="!isLogged">Iniciar sesión</a>
+            <!-- <a class="nav-link " routerLinkActive="active" (click)="onlogOut()" *ngIf="isLogged">Cerrar sesión</a> -->
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link disabled">Disabled</a>
+          </div>
+        </div>
+      </div>
+    </nav> -->

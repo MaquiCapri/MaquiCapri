@@ -1,0 +1,50 @@
+<div class="proyects" style="background-image: url('./assets/fondoPort1.jpg')">
+   <br>
+    <div class="box">
+        <h2>Proyectos:</h2>
+        <div class="card mb-3"  style="text-align: center;" *ngFor="let p of proyectos">
+            <div class="row"  style="display: flex;justify-content: center;">
+                <div class="col-md-8" style="width: 76vw;">
+                    <div class="card-body" style="padding: 0px 0px;padding-top:8px">
+                        <h2>{{p.titulo}}</h2>
+                    </div>
+                    <div class="card-body" style="padding: 0px 0px;">
+    
+                        <a href="{{p.direccionUrl}}" target="_blank">{{p.direccionUrl}}</a>
+    
+                    </div>
+                    <div class="card-body" >
+                        <h4>{{p.descripcion}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button mat-stroked-button class="primary" type="text" (click)="irProyectos()">Volver</button>
+
+    </div>
+  
+</div>
+
+<!-- <div class="container">
+    <div id="portfolio"><h4> Portfolio: (2022)</h4> <h5> Es este portfolio que fue un proyecto que realicé en Argentina Programa.  En la segunda etapa como manera de aprender los diferentes lenguajes que nos iban enseñando.
+           Tanto del Front end como del Back end y la base de datos. Todo en un mismo proyecto.
+        <br/>Aprendimos Github, Html, Css, Javascript, Angular, Bootstrap, Apache Netbeans, Msql,
+           Heroku, Java, FireBase.                        
+           </h5>
+    </div>
+<div id="delivery">
+<h4>WikIdeas:</h4>
+<div><a href="https://maquicapri.github.io/wikiIdeas.github.io/" target="_blank">https://maquicapri.github.io/wikiIdeas.github.io/</a></div>
+
+<h5> 10-2022 al 2023: Es un proyecto grupal que lo realicé en ID for Idea. Yo me encargué del Frontend con Angular.
+    Mi equipo: Christopher Aguilar: Backend; Traudy Vargas: Project Manager; Jose Manuel Oropeza: Diseñador;Ana Paula Peralta: Tester.</h5>
+</div>
+
+<div id="hidrolimp">
+    <h4>Hidrolimp:</h4>
+    <div><a href="https://maquicapri.github.io/hidrolimp/" target="_blank">https://maquicapri.github.io/hidrolimp/</a></div>
+    
+    <h5> Marzo 2023: Es un proyecto que realicé para una empresa de hidrolavadoras.</h5>
+    </div> -->
+
+<!-- <button type="button" class="button" (click)="irProyectos()" ><span>VOLVER</span></button>  -->

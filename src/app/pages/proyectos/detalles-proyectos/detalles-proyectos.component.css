@@ -1,0 +1,15 @@
+.proyects {
+   
+    display: flex;
+    justify-content: center;
+  }
+
+
+h2{
+    padding-left: 6px;
+}
+
+.box{
+    width: 80vw;
+
+  }
